@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffb6c1, #a6c1ee);
+  overflow: hidden;
+}
+
+.game {
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+#heart {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ff5f9e;
+  clip-path: path("M24 4C20 0 14 0 10 4 5 8 0 14 0 21c0 11 24 23 24 23S48 32 48 21c0-7-5-13-10-17-4-4-10-4-14 0z");
+  cursor: pointer;
+  animation: float 2s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(-15px) scale(1.1); }
+}
+
+#score {
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.3em;
+}

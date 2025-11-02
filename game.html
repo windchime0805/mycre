@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cute Catch — Superhero Emblem 💫</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <div class="game">
+    <h1>Catch the Super 🦸🏻‍♂️</h1>
+    <p>Score: <span id="score">0</span></p>
+
+    <!-- Superhero emblem container -->
+    <div id="heart" aria-label="superhero emblem" role="button" tabindex="0">
+      <!-- Inline SVG: shield + heart/star emblem -->
+      <svg viewBox="0 0 200 220" preserveAspectRatio="xMidYMid meet" class="emblem">
+        <!-- shield base -->
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0%" stop-color="#ff8fb1"/>
+            <stop offset="100%" stop-color="#ff5f9e"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" x2="1">
+            <stop offset="0%" stop-color="#ffd77a"/>
+            <stop offset="100%" stop-color="#ffb86b"/>
+          </linearGradient>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- outer shield -->
+        <path d="M100 10
+                 C60 10, 30 40, 30 80
+                 C30 140, 90 190, 100 205
+                 C110 190, 170 140, 170 80
+                 C170 40, 140 10, 100 10 Z"
+              fill="url(#g1)" stroke="#fff2" stroke-width="2" filter="url(#glow)"/>
+
+        <!-- inner shield highlight -->
+        <path d="M100 30
+                 C75 30, 50 50, 50 80
+                 C50 125, 95 165, 100 175
+                 C105 165, 150 125, 150 80
+                 C150 50, 125 30, 100 30 Z"
+              fill="url(#g2)" opacity="0.95"/>
+
+        <!-- heart/star emblem (stylized heart with a star cut) -->
+        <g transform="translate(100,95) scale(0.9)">
+          <!-- heart -->
+          <path d="M0 -25
+                   C -12 -45, -50 -40, -50 -5
+                   C -50 25, 0 55, 0 55
+                   C 0 55, 50 25, 50 -5
+                   C 50 -40, 12 -45, 0 -25 Z"
+                fill="#fff" opacity="0.95" transform="translate(0,-5) scale(0.36)"/>
+          <!-- small star overlay -->
+          <polygon points="-8,-8 0,6 8,-8 -10,0 10,0"
+                   fill="#ff5f9e" transform="translate(0,4) scale(0.9) rotate(10)"/>
+        </g>
+
+        <!-- sheen -->
+        <path d="M60 40 C90 25, 130 25, 140 40" stroke="#ffffff55" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
